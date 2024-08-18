@@ -1,0 +1,221 @@
+/* Estilos generales (mobile-first) */
+body {
+    font-family: Arial, sans-serif; /* Fuente principal de la página */
+    background-color: #f4f4f4; /* Color de fondo de la página */
+    margin: 0; /* Elimina el margen por defecto del body */
+    padding: 0; /* Elimina el padding por defecto del body */
+    box-sizing: border-box; /* Hace que padding y border se incluyan en el ancho y alto totales */
+    color: #333; /* Color del texto principal */
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 100%; /* Ancho completo para dispositivos móviles */
+    background-color: #000; /* Color de fondo negro para la barra lateral */
+    color: hwb(66 0% 0%); /* Color del texto en la barra lateral (casi blanco) */
+    padding: 20px; /* Espacio interno en la barra lateral */
+    box-shadow: none; /* No se aplica sombra en móviles */
+    position: relative; /* Posición relativa para permitir la alineación de elementos */
+    display: flex; /* Flexbox para distribuir elementos verticalmente */
+    flex-direction: column; /* Los elementos se alinean en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+}
+
+/* Imagen de perfil */
+.sidebar .photo img {
+    width: 140px; /* Ancho de la imagen de perfil en móviles */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10%; /* Imagen redonda */
+    border: 3px solid #ffa11e; /* Borde alrededor de la imagen */
+}
+
+/* Barra divisora */
+.divider {
+    width: 100%; /* Asegura que la línea divisoria ocupe el 100% del ancho de la barra lateral */
+    height: 4; /* Aumenta la altura de la línea para hacerla más gruesa */
+    background-color: #ffa11e; /* Mantiene el color de la línea divisoria */
+    margin:  0;
+    padding: 0; /* Aumenta el margen superior e inferior para darle más espacio */
+}
+
+/* Navegación de la barra lateral */
+.sidebar nav ul li {
+    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+    text-align: center; /* Centra el texto */
+}
+
+/* Enlaces de la barra lateral */
+.sidebar nav ul li a {
+    font-size: 16px; /* Tamaño de fuente ligeramente más pequeño en móviles */
+    padding: 8px; /* Espacio interno dentro de los enlaces */
+    color: #ffa11e; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo al hacer hover */
+}
+
+/* Enlaces de redes sociales */
+.redes nav ul li a {
+    font-size: 16px; /* Tamaño de fuente para los enlaces de redes sociales */
+    color: #ffa11e; /* Color del texto de los enlaces de redes sociales */
+}
+
+/* Contenido principal */
+.content {
+    margin: 0; /* Elimina el margen lateral en móviles */
+    padding: 20px; /* Espacio interno dentro del contenido */
+}
+
+/* Estilo del título principal */
+h1 {
+    text-align: center; /* Centra el texto del título principal */
+    color: #333; /* Color del texto del título */
+    font-size: 24px; /* Tamaño de fuente más pequeño en móviles */
+}
+
+/* Estilo de los subtítulos (h2) */
+h2 {
+    color: #ffa11e; /* Color del texto de los subtítulos */
+    border-bottom: 2px solid #ffa11e; /* Línea inferior debajo de los subtítulos */
+    padding-bottom: 8px; /* Espacio debajo de los subtítulos */
+    margin-bottom: 15px; /* Margen inferior de los subtítulos */
+    font-size: 20px; /* Tamaño de fuente más pequeño en móviles */
+}
+
+/* Estilo de los subtítulos de tercer nivel (h3) */
+h3 {
+    color: #333; /* Color del texto de los subtítulos de tercer nivel */
+    margin-top: 15px; /* Margen superior de los subtítulos de tercer nivel */
+    margin-bottom: 8px; /* Margen inferior de los subtítulos de tercer nivel */
+    font-size: 18px; /* Tamaño de fuente más pequeño en móviles */
+}
+
+/* Estilo para las listas */
+ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el relleno por defecto de la lista */
+}
+
+/* Estilo para los elementos de las listas */
+li {
+    margin-bottom: 8px; /* Espacio entre los elementos de la lista */
+    font-size: 14px; /* Tamaño de fuente más pequeño en móviles */
+}
+
+/* Estilo general de las secciones */
+.section {
+    margin-bottom: 15px; /* Espacio inferior entre secciones */
+    display: none; /* Oculta todas las secciones por defecto */
+}
+
+/* Muestra la sección seleccionada*/
+.section:target {
+    display: block; /* Muestra la sección seleccionada */
+}
+
+/* Estilo para las listas dentro de las secciones */
+.section ul {
+    padding-left: 15px; /* Relleno a la izquierda para listas dentro de secciones */
+}
+
+/* Estilo para los elementos de lista dentro de las secciones */
+.section ul li {
+    padding-left: 8px; /* Relleno a la izquierda para elementos de lista dentro de secciones */
+    position: relative; /* Permite la colocación absoluta de elementos hijos */
+}
+
+/* Punto antes de cada elemento de lista */
+.section ul li::before {
+    content: "•"; /* Añade un punto antes de cada elemento de lista */
+    position: absolute; /* Coloca el punto de forma absoluta */
+    left: 0; /* Alinea el punto a la izquierda */
+    color: #ffa11e; /* Color del punto */
+}
+
+/* Estilos para pantallas de 768px o más (tablets) */
+@media (min-width: 768px) {
+    .sidebar {
+        width: 230px; /* Ancho fijo para la barra lateral en tablets */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Aplica sombra a la barra lateral */
+        position: fixed; /* Fija la barra lateral en pantallas más grandes */
+        height: 100%; /* Altura completa de la barra lateral */
+    }
+
+    .content {
+        margin-left: 270px; /* Deja espacio a la izquierda para la barra lateral */
+        padding: 30px; /* Aumenta el padding del contenido */
+    }
+
+    h1 {
+        font-size: 28px; /* Incrementa el tamaño del título principal */
+    }
+
+    h2 {
+        font-size: 22px; /* Incrementa el tamaño de los subtítulos */
+    }
+
+    h3 {
+        font-size: 20px; /* Incrementa el tamaño de los subtítulos de tercer nivel */
+    }
+
+    li {
+        font-size: 16px; /* Incrementa el tamaño de los elementos de lista */
+    }
+}
+
+/* Estilos para pantallas de 1024px o más (desktop) */
+@media (min-width: 1024px) {
+    .sidebar {
+        width: 250px; /* Aumenta el ancho de la barra lateral */
+    }
+
+    .content {
+        margin-left: 280px; /* Ajusta el margen izquierdo para el contenido */
+        padding: 40px; /* Aumenta el padding del contenido */
+    }
+
+    h1 {
+        font-size: 32px; /* Incrementa aún más el tamaño del título principal */
+    }
+
+    h2 {
+        font-size: 24px; /* Incrementa aún más el tamaño de los subtítulos */
+    }
+
+    h3 {
+        font-size: 22px; /* Incrementa aún más el tamaño de los subtítulos de tercer nivel */
+    }
+
+    li {
+        font-size: 18px; /* Incrementa aún más el tamaño de los elementos de lista */
+    }
+}
+@media (min-width: 1440px) {
+    .sidebar {
+        width: 300px;
+        font-size: 30px; /* Aumenta aún más el ancho de la barra lateral */
+    }
+
+    .content {
+        margin-left: 320px; /* Ajusta el margen izquierdo para el contenido */
+        padding: 50px; /* Aumenta el padding del contenido */
+    }
+
+    h1 {
+        font-size: 40px; /* Incrementa el tamaño del título principal */
+    }
+
+    h2 {
+        font-size: 30px; /* Incrementa el tamaño de los subtítulos */
+    }
+
+    h3 {
+        font-size: 26px; /* Incrementa el tamaño de los subtítulos de tercer nivel */
+    }
+
+    li {
+        font-size: 20px; /* Incrementa el tamaño de los elementos de lista */
+    }
+    nav ul li {
+        font-size: 30px;
+    }
+}
